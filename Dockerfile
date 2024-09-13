@@ -1,15 +1,18 @@
-FROM node:11.1.0-alpine
+FROM node:14-alpine
 
-WORKDIR /
+# Set the working directory inside the container
+WORKDIR /app
 
-# Copy package.json and package-lock.json first, then install dependencies
-COPY package.json package-lock.json ./
-RUN npm install
-
-# Copy the rest of the files from your GitHub repository into /app
+# Copy application files into /app
 COPY . .
 
+# Install dependencies
+RUN npm install
+
+# Expose the port your app runs on
 EXPOSE 3000
 
-CMD ["npm", "test"]
+# Start the app
+CMD ["npm", "start"]
+
 
