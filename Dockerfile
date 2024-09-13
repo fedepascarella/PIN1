@@ -1,7 +1,7 @@
 FROM node:14-alpine
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /webapp
 
 # Copy application files into /app
 COPY . .
