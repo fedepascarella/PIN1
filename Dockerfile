@@ -1,6 +1,6 @@
 FROM node:11.1.0-alpine
 
-WORKDIR /app
+WORKDIR /
 
 # Copy package.json and package-lock.json first, then install dependencies
 COPY package.json package-lock.json ./
